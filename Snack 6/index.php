@@ -38,11 +38,25 @@ $db = [
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .rectangle{
+            width: 100%;
+        }
+        .green{
+            background-color: green;
+        }
+        .gray{
+            background-color: gray;
+        }
+    </style>
 </head>
 <body>
     <?php foreach($db as $key => $value) : ?>
-            
-            
+        <div class="rectangle <?= $key === 'teachers' ? 'gray' : 'green' ?>">
+            <?php foreach ($value as $detail) : ?>
+                <p><?= $detail['name'] . " " . $detail['lastname'] ?> </p>
             <?php endforeach; ?>
+        </div>
+    <?php endforeach; ?>
 </body>
 </html>
